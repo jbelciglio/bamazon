@@ -45,6 +45,7 @@ connection.connect(function(err) {
         console.log(res[item].stock_quantity);
         if (answer.howMany > res[item].stock_quantity) {
             console.log("insufficient quantity!");
+            mainMenu();
         } else if (answer.howMany <= res[item].stock_quantity) {
             console.log("sufficient quantity!");
             var update = res[item].stock_quantity - answer.howMany;
